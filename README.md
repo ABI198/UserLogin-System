@@ -16,3 +16,6 @@
  * SOLID Principles
  
 <b>Some Visuals About Application</b><br>
+![1](https://user-images.githubusercontent.com/99497305/192027986-dcdc2eab-c908-4f41-953c-6a16871855b7.png)
+![2](https://user-images.githubusercontent.com/99497305/192028010-b57235ed-813c-4b5f-a91d-16d2a90b79ea.png)
+![3](https://user-images.githubusercontent.com/99497305/192028088-c43283ca-1eb0-46b8-b397-b2d0879a5d17.png)
