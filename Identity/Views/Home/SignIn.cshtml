@@ -1,0 +1,44 @@
+﻿@model AppUserSignInModel
+
+@{
+    Layout = "_Layout";
+}
+
+@if (!User.Identity.IsAuthenticated)
+{
+    <form asp-action="SignIn" method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="ReturnUrl" />
+        <div class="mb-3">
+            <label>Username :</label>
+            <span class="text-danger" asp-validation-for="UserName"></span>
+            <input asp-for="UserName" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label>Password :</label>
+            <span class="text-danger" asp-validation-for="Password"></span>
+            <input type="password" asp-for="Password" class="form-control" />
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" asp-for="RememberMe">
+            <label class="form-check-label" for="flexCheckDefault">
+                Remember Me
+            </label>
+        </div>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Sign In</button>
+        </div>
+    </form>
+}
+else
+{
+    <div class="alert alert-warning">
+        <p>You have already logged in as '@User.Identity.Name'</p>
+    </div>
+    <div class="alert alert-warning">
+        <p>Do you want to change the user logging in?</p>
+        <div class="mb-3">
+            <a asp-controller="Home" asp-action="ChangeLoggedInUser" type="button" class="btn btn-primary">Change User</a>
+        </div>
+    </div>
+}

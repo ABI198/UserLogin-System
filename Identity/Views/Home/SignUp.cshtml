@@ -1,0 +1,37 @@
+﻿@model AppUserCreateModel
+
+@{ 
+    Layout = "_Layout";
+}
+
+<form asp-action="SignUp" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="mb-3">
+        <label>Username :</label>
+        <span class="text-danger" asp-validation-for="UserName"></span>
+        <input asp-for="UserName" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label>Password :</label>
+        <span class="text-danger" asp-validation-for="Password"></span>
+        <input type="password" asp-for="Password" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label>Password Confirmation :</label>
+        <span class="text-danger" asp-validation-for="ConfirmPassword"></span>
+        <input type="password" asp-for="ConfirmPassword" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label>Email :</label>
+        <span class="text-danger" asp-validation-for="Email"></span>
+        <input type="email" asp-for="Email" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label>Gender :</label>
+        <span class="text-danger" asp-validation-for="Gender"></span>
+        <input asp-for="Gender" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <button type="submit" class="btn btn-primary">Sign Up</button>
+    </div>
+</form>

@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>IdentityApp</title>
+    <link href="~/bootstrap/css/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a asp-controller="Home" asp-action="SignUp" class="nav-link active" aria-current="page">Sign Up</a>
+                        <a asp-controller="Home" asp-action="SignIn" class="nav-link">Sign In</a>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            if (User.IsInRole("Admin"))
+                            {
+                                <a class="nav-link" href="#">Pricing</a>
+                            }
+                            <a asp-controller="Home" asp-action="SignOut" class="nav-link">Sign Out</a>
+                        }
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section class="container mt-2">
+        <div>
+            @RenderBody()
+        </div>
+    </section>
+    <script src="~/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>
